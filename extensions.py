@@ -2,6 +2,7 @@ import requests
 import json
 from config import keys
 
+
 # собственный обработчик исключений
 class ConvertionException(Exception):
     pass
@@ -10,7 +11,7 @@ class ConvertionException(Exception):
 class CryptoConverter:
     @staticmethod
     # полечение валюты и количества нужного типа данных
-    def get_price(base: str, quote: str, amount: int):
+    def get_price(base: str, quote: str, amount: str):
         # обработка введения одной валюты дважды
         if base == quote:
             raise ConvertionException(f"Error when exchanging the same currency *{base}*.")
